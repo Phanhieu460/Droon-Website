@@ -1,11 +1,18 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd'
 import { useState } from 'react'
-import { ICreateAccount } from './types/userType'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { openNotification } from '../../../util/notifications'
+import { openNotification } from '../../util/notifications'
 import Cookies from 'js-cookie'
+
+export interface ICreateAccount {
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  confirmPassword: string
+}
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState<ICreateAccount>({
