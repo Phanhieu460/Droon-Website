@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Navigation, Pagination } from 'swiper'
 import { Swiper } from 'swiper/react'
+import { SwiperModule } from 'swiper/types'
 
 interface ISlider {
   slidePerview: number
@@ -16,17 +17,6 @@ interface ISlider {
 const Slider = (props: ISlider) => {
   const { slidePerview, spaceBetween, autoPlay, loop, navigation, pagination, keyboardEnable, children } = props
 
-  let modules: any = []
-
-  useEffect(() => {
-    if (navigation) {
-      modules.push(Navigation)
-    }
-    if (pagination) {
-      modules.push(Pagination)
-    }
-  }, [navigation, pagination])
-  console.log(modules)
   return (
     <Swiper
       slidesPerView={slidePerview}
@@ -37,7 +27,11 @@ const Slider = (props: ISlider) => {
       pagination={{
         clickable: pagination
       }}
-      modules={modules}
+      keyboard={{
+        enabled: keyboardEnable
+      }}
+      modules={[Navigation, Pagination]}
+      className="mySwiper"
     >
       {children}
     </Swiper>

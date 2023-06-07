@@ -8,10 +8,12 @@ import { Product } from 'models'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Keyboard, Navigation, Pagination } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { SwiperSlide, Swiper } from 'swiper/react'
 
 import HomeBlog from 'components/home/HomeBlog'
 import HomeGallery from 'components/home/HomeGallery'
+import Slider from 'components/slider/Slider'
+import mapData from '../../data/HomeMap.json'
 
 const { Meta } = Card
 
@@ -30,7 +32,6 @@ const Home = () => {
     navigate('/product')
   }
 
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const dispatch = useAppDispatch()
   const [products, setProducts] = useState<Array<Product>>()
   const { productList, count } = useAppSelector(state => state.product)
@@ -38,10 +39,6 @@ const Home = () => {
 
   const onChange = (key: string | string[]) => {
     console.log(key)
-  }
-
-  const onClickMap = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index)
   }
 
   useEffect(() => {
@@ -77,56 +74,20 @@ const Home = () => {
     // Add more FAQ items here...
   ]
 
-  const map = [
-    {
-      img: 'https://cdn.shopify.com/s/files/1/1280/1207/products/6_0edf3b91-3c21-4396-b60a-4698827734eb_small_crop_bottom.jpg?v=1640259852',
-      title: 'New badge product',
-      price: '$80.00'
-    },
-    {
-      img: 'https://cdn.shopify.com/s/files/1/1280/1207/products/5_e48a4865-c05c-4568-ba1b-37e6828ddfea_small_crop_bottom.jpg?v=1640259829',
-      title: 'Variable product',
-      price: '$80.00'
-    },
-    {
-      img: 'https://cdn.shopify.com/s/files/1/1280/1207/products/3_7849c45a-44ed-4574-a3ec-a1f6c54f7736_small_crop_bottom.jpg?v=1640259723',
-      title: 'Product with video',
-      price: '$80.00'
-    },
-    {
-      img: 'https://cdn.shopify.com/s/files/1/1280/1207/products/1_small_crop_bottom.jpg?v=1640259628',
-      title: 'New and sale..',
-      price: '$80.00'
-    },
-    {
-      img: 'https://cdn.shopify.com/s/files/1/1280/1207/products/2_c865d536-ae04-412b-9ce7-7a6f271de20d_small_crop_bottom.jpg?v=1640259667',
-      title: 'This is the...',
-      price: '$80.00'
-    }
-  ]
-
   return (
     <>
       <div className="home">
         {/* Carousel */}
 
         <div className="home__carousel">
-          <Swiper
-            slidesPerView={1}
+          <Slider
+            slidePerview={1}
             spaceBetween={30}
-            keyboard={{
-              enabled: true
-            }}
+            keyboardEnable={false}
             loop={true}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false
-            }}
-            navigation={false}
+            autoPlay={true}
+            navigation={true}
             pagination={true}
-            direction="horizontal"
-            modules={[Keyboard, Pagination, Navigation]}
-            className="mySwiper"
           >
             <SwiperSlide className="swiper__feature">
               <div
@@ -243,7 +204,7 @@ const Home = () => {
                 </div>
               </div>
             </SwiperSlide>
-          </Swiper>
+          </Slider>
         </div>
         <div className="owl-nav">
           <div className="owl-prev">
@@ -470,9 +431,9 @@ const Home = () => {
             </div>
             <div className="home__faq__content__list">
               <Collapse defaultActiveKey={['1']} onChange={onChange} accordion>
-                {faqItems.map((item, index) => (
+                {faqItems.map((item, index: number) => (
                   <>
-                    <Panel header={item.question} key={index + 1}>
+                    <Panel header={item.question} key={index}>
                       <p>{item.answer}</p>
                     </Panel>
                   </>
@@ -514,8 +475,8 @@ const Home = () => {
               {products &&
                 products?.map((product: Product) => {
                   return (
-                    <SwiperSlide style={{ width: 270 }}>
-                      <ProductSingle product={product} key={product._id} view={view} />
+                    <SwiperSlide style={{ width: 270 }} key={product._id}>
+                      <ProductSingle product={product} view={view} />
                     </SwiperSlide>
                   )
                 })}
@@ -523,19 +484,7 @@ const Home = () => {
           </div>
         </div>
         {/* Map */}
-        <div className="home__map">
-          <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/lookboo4.png?v=1640767015" alt="" />
-          {map.map((item: any, index: number) => (
-            <div key={index} className={`home__map__item item${index + 1} ${activeIndex === index ? 'active' : ''}`}>
-              <Button shape="circle" icon={<FontAwesomeIcon icon={faPlus} />} onClick={() => onClickMap(index)} />
-              <div className={`card ${activeIndex === index ? 'active' : ''}`}>
-                <Card style={{ width: 300, marginTop: 16 }}>
-                  <Meta avatar={<Avatar src={item.img} />} title={item.title} description={item.price} />
-                </Card>
-              </div>
-            </div>
-          ))}
-        </div>
+
         {/* Blog */}
         <HomeBlog />
         {/* Gallery */}

@@ -1,0 +1,27 @@
+[
+  {
+    "img": "https://cdn.shopify.com/s/files/1/1280/1207/products/6_0edf3b91-3c21-4396-b60a-4698827734eb_small_crop_bottom.jpg?v=1640259852",
+    "title": "New badge product",
+    "price": "$80.00"
+  },
+  {
+    "img": "https://cdn.shopify.com/s/files/1/1280/1207/products/5_e48a4865-c05c-4568-ba1b-37e6828ddfea_small_crop_bottom.jpg?v=1640259829",
+    "title": "Variable product",
+    "price": "$80.00"
+  },
+  {
+    "img": "https://cdn.shopify.com/s/files/1/1280/1207/products/3_7849c45a-44ed-4574-a3ec-a1f6c54f7736_small_crop_bottom.jpg?v=1640259723",
+    "title": "Product with video",
+    "price": "$80.00"
+  },
+  {
+    "img": "https://cdn.shopify.com/s/files/1/1280/1207/products/1_small_crop_bottom.jpg?v=1640259628",
+    "title": "New and sale..",
+    "price": "$80.00"
+  },
+  {
+    "img": "https://cdn.shopify.com/s/files/1/1280/1207/products/2_c865d536-ae04-412b-9ce7-7a6f271de20d_small_crop_bottom.jpg?v=1640259667",
+    "title": "This is the...",
+    "price": "$80.00"
+  }
+]
