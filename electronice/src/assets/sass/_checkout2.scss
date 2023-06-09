@@ -70,12 +70,12 @@
   justify-content: space-between;
   align-items: center;
 }
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   .checkout {
     padding: 50px;
   }
 }
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .checkout {
     flex-wrap: wrap;
     flex-direction: column-reverse;

@@ -38,7 +38,7 @@
   margin-left: 0;
   color: #1677ff;
 }
-@media screen and (max-width: 992px) {
+@media #{$lg-layout} {
   .login {
     &__main {
       &--form {
@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media #{$md-layout} {
   //tablet
   .login {
     &__main {

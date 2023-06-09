@@ -63,9 +63,8 @@
     max-width: 100%;
   }
 }
-@media screen and (min-width: 993px) {
-}
-@media screen and (max-width: 992px) {
+
+@media #{$lg-layout} {
   .ship__main {
     width: 600px;
   }
@@ -87,7 +86,7 @@
     padding: 10px;
   }
 }
-@media screen and (max-width: 768px) {
+@media #{$md-layout} {
   .ship {
     max-width: 768px;
     margin: auto;

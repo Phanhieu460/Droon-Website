@@ -1,11 +1,10 @@
 .about {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1200px;
+  width: 100%;
 
   .about__droon {
     display: flex;
-    flex-wrap: wrap;
     padding-top: 80px;
     padding-bottom: 80px;
 
@@ -444,79 +443,64 @@
   }
 }
 
+@media #{$xl-layout} {
+  .about {
+    .about__droon {
+      .about__droon-image {
+        flex-basis: 100%;
+      }
+      .about__droon-description {
+        flex-basis: 100%;
+      }
+    }
+  }
+  // popular
+
+  .popular {
+    .popular__contain {
+      .popular__container {
+        .popular_container__title {
+          p {
+            font-size: 35px;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+  //popular item
+  .popular__item {
+    .popular__item__contain {
+      .popular__item__container {
+        .popular__item--title {
+          h3 {
+            font-size: 35px;
+            line-height: 40px;
+          }
+        }
+        .popular__item--content {
+          .card {
+          }
+        }
+      }
+    }
+  }
+  .featured {
+    .featured__item__contain {
+      .featured__item__container {
+        .featured__item--title {
+          h3 {
+            font-size: 35px;
+            line-height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$lg-layout} {
+}
+
 @media #{$md-layout} {
-  main {
-    padding: 0 30px;
-    margin: 0 auto;
-    max-width: 1200px;
-    .about {
-      .about__droon {
-        .about__droon-image {
-          flex-basis: 100%;
-        }
-        .about__droon-description {
-          flex-basis: 100%;
-        }
-      }
-    }
-    // popular
-
-    .popular {
-      .popular__contain {
-        .popular__container {
-          .popular_container__title {
-            p {
-              font-size: 35px;
-              line-height: 40px;
-            }
-          }
-        }
-      }
-    }
-    //popular item
-    .popular__item {
-      .popular__item__contain {
-        .popular__item__container {
-          .popular__item--title {
-            h3 {
-              font-size: 35px;
-              line-height: 40px;
-            }
-          }
-          .popular__item--content {
-            .card {
-            }
-          }
-        }
-      }
-    }
-    .featured {
-      .featured__item__contain {
-        .featured__item__container {
-          .featured__item--title {
-            h3 {
-              font-size: 35px;
-              line-height: 40px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media #{$sm-layout} {
-  main {
-    max-width: 992px;
-    padding: 0 30px;
-    margin: 0 auto;
-  }
-}
-
-@media #{$xs-layout} {
-  main {
-    max-width: 768px;
-    padding: 0 30px;
-    margin: 0 auto;
-  }
 }

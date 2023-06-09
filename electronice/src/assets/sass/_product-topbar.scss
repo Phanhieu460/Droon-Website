@@ -25,13 +25,13 @@
     font-size: 18px;
   }
 }
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   //tablet
   .product {
   }
 }
 
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .product-topbar {
     display: block;
     text-align: left;

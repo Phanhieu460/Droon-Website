@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 15px;
+  padding: 50px;
   text-align: left;
 
   &__about {
@@ -39,7 +39,7 @@
   }
 }
 
-@media #{$md-layout} {
+@media #{$xl-layout} {
   .footer {
     max-width: 960px;
     flex-wrap: wrap;
@@ -53,9 +53,8 @@
   }
 }
 
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   .footer {
-    max-width: 720px;
     flex-wrap: wrap;
     &__follow,
     &__information,
@@ -65,9 +64,8 @@
   }
 }
 
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .footer {
-    max-width: 540px;
     flex-wrap: wrap;
     &__follow {
       flex-basis: 100%;

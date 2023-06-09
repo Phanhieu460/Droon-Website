@@ -13,7 +13,9 @@ import { SwiperSlide, Swiper } from 'swiper/react'
 import HomeBlog from 'components/home/HomeBlog'
 import HomeGallery from 'components/home/HomeGallery'
 import Slider from 'components/slider/Slider'
-import mapData from '../../data/HomeMap.json'
+import HomeMap from 'components/home/HomeMap'
+import HomeSlider from 'components/home/HomeSlider'
+import HomeFeature from 'components/home/HomeFeature'
 
 const { Meta } = Card
 
@@ -28,9 +30,6 @@ const contentStyle: React.CSSProperties = {
 
 const Home = () => {
   const navigate = useNavigate()
-  const handleClick = () => {
-    navigate('/product')
-  }
 
   const dispatch = useAppDispatch()
   const [products, setProducts] = useState<Array<Product>>()
@@ -78,189 +77,9 @@ const Home = () => {
     <>
       <div className="home">
         {/* Carousel */}
-
-        <div className="home__carousel">
-          <Slider
-            slidePerview={1}
-            spaceBetween={30}
-            keyboardEnable={false}
-            loop={true}
-            autoPlay={true}
-            navigation={true}
-            pagination={true}
-          >
-            <SwiperSlide className="swiper__feature">
-              <div
-                className="home__carousel__contain"
-                style={{
-                  backgroundImage:
-                    "url('//cdn.shopify.com/s/files/1/1280/1207/files/slider_full_8737877e-52de-4384-b9c7-5ab1521594a6.png?v=1639042929')",
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  backgroundColor: '#edfeff',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="home__carousel__content">
-                  <div className="home__carousel__right">
-                    <div className="slider-content ">
-                      <h1 className="animated">
-                        <span>DRONE</span> DIGITAL
-                      </h1>
-                      <p className="animated">
-                        Experience the decibels like your ears deserve to. Safe for the ears, very for the heart.{' '}
-                      </p>
-                      <div className="slider__animated__btn__wrap">
-                        <div className="slider-btn ">
-                          <a className="animated" onClick={() => handleClick()}>
-                            Explore More
-                          </a>
-                        </div>
-                        <div className="slider__animated__btn ">
-                          <a className="video-popup magni_video_pop" href="https://www.youtube.com/watch?v=_9VUPq3SxOc">
-                            <FontAwesomeIcon className="btn-play" icon={faPlay} />
-                          </a>
-                          <span>Watch Video</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper__feature">
-              <div
-                className="home__carousel__contain"
-                style={{
-                  backgroundImage: `url("//cdn.shopify.com/s/files/1/1280/1207/files/slider_full_2_7a3d4cb6-4e02-4bdb-ac70-200256f51a5b.png?v=1640513231")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  backgroundColor: '#edfeff',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="home__carousel__content">
-                  <div className="home__carousel__right">
-                    <div className="slider-content ">
-                      <h1 className="animated">
-                        <span>DRONE</span> MINIMAL
-                      </h1>
-                      <p className="animated">
-                        Experience the decibels like your ears deserve to. Safe for the ears, very for the heart.
-                      </p>
-                      <div className="slider__animated__btn__wrap">
-                        <div className="slider-btn ">
-                          <a className="animated" onClick={() => handleClick()}>
-                            Explore More
-                          </a>
-                        </div>
-                        <div className="slider__animated__btn ">
-                          <a className="video-popup magni_video_pop" href="https://www.youtube.com/watch?v=_9VUPq3SxOc">
-                            <FontAwesomeIcon className="btn-play" icon={faPlay} />
-                          </a>
-                          <span>Watch Video</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="swiper__feature">
-              <div
-                className="home__carousel__contain"
-                style={{
-                  backgroundImage: `url("//cdn.shopify.com/s/files/1/1280/1207/files/slider_full_3_4fedfad3-59c2-4a0e-922d-92c38cd4bb6c.png?v=1640510457")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  backgroundColor: '#edfeff',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="home__carousel__content">
-                  <div className="home__carousel__right">
-                    <div className="slider-content ">
-                      <h1 className="animated">
-                        <span>DRONE</span> CLASSIC
-                      </h1>
-                      <p className="animated">
-                        Experience the decibels like your ears deserve to. Safe for the ears, very for the heart.
-                      </p>
-                      <div className="slider__animated__btn__wrap">
-                        <div className="slider-btn ">
-                          <a className="animated" onClick={() => handleClick()}>
-                            Explore More
-                          </a>
-                        </div>
-                        <div className="slider__animated__btn ">
-                          <a className="video-popup magni_video_pop" href="https://www.youtube.com/watch?v=_9VUPq3SxOc">
-                            <FontAwesomeIcon className="btn-play" icon={faPlay} />
-                          </a>
-                          <span>Watch Video</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Slider>
-        </div>
-        <div className="owl-nav">
-          <div className="owl-prev">
-            <FontAwesomeIcon icon={faChevronUp} />
-          </div>
-          <div className="owl-next">
-            <FontAwesomeIcon icon={faChevronDown} />
-          </div>
-        </div>
-
+        <HomeSlider />
         {/* Feature 1*/}
-        <div className="home__feature">
-          <div className="home__feature__img">
-            <img
-              src="https://cdn.shopify.com/s/files/1/1280/1207/files/about3.png?v=1640757951"
-              alt=""
-              width={'100%'}
-            />
-          </div>
-          <div className="home__feature__content">
-            <h3 style={{ color: 'red', fontSize: '20px', margin: '0 0 20px' }}>Feature about</h3>
-            <h2 style={{ fontSize: '45px', margin: '0 0 60px' }}>Specializing in Drone.</h2>
-            <Divider />
-            <div className="feature__item">
-              <div className="feature__item__img">
-                <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/drone.png?v=1639306097" alt="" />
-              </div>
-              <div className="feature__item__content">
-                <h4>Mobile Device Supported</h4>
-                <p>When an unknown printer took a galley of type and scrambled it to make.</p>
-              </div>
-            </div>
-            <div className="feature__item">
-              <div className="feature__item__img">
-                <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/smart-farm.png?v=1639306118" alt="" />
-              </div>
-              <div className="feature__item__content">
-                <h4>Easy integrative control</h4>
-                <p>When an unknown printer took a galley of type and scrambled it to make.</p>
-              </div>
-            </div>
-            <div className="feature__item">
-              <div className="feature__item__img">
-                <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/drone_1.png?v=1639306189" alt="" />
-              </div>
-              <div className="feature__item__content">
-                <h4>Customized Commands</h4>
-
-                <p>When an unknown printer took a galley of type and scrambled it to make.</p>
-              </div>
-            </div>
-            <Button type="primary" shape="round" size={'large'}>
-              Explore more
-            </Button>
-          </div>
-        </div>
+        <HomeFeature />
         {/* Feature 2*/}
         <div
           style={{
@@ -280,58 +99,59 @@ const Home = () => {
               <Divider />
               <div className="feature__item">
                 <Row>
-                  <Col span={3}>
+                  <Col span={12}>
                     <img
                       src="https://cdn.shopify.com/s/files/1/1280/1207/files/battery-charge.png?v=1639385813"
                       alt=""
                     />
+                    <div>
+                      <h3>30 Mins</h3>
+                      <p>Flight time</p>
+                    </div>
                   </Col>
-                  <Col span={9}>
-                    <h3>30 Mins</h3>
-                    <p>Flight time</p>
-                  </Col>
-                  <Col span={3}>
+                  <Col span={12}>
                     <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/play-button.png?v=1639385846" alt="" />
-                  </Col>
-                  <Col span={9}>
-                    <h3>4K 65fps</h3>
-                    <p>Video resolution</p>
+                    <div>
+                      <h3>4K 65fps</h3>
+                      <p>Video resolution</p>
+                    </div>
                   </Col>
                 </Row>
               </div>
               <div className="feature__item">
                 <Row>
-                  <Col span={3}>
+                  <Col span={12}>
                     <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/speedometer.png?v=1639385558" alt="" />
+                    <div>
+                      <h3>72 KM/H</h3>
+                      <p>Speed Meter</p>
+                    </div>
                   </Col>
-                  <Col span={9}>
-                    <h3>72 KM/H</h3>
-                    <p>Speed Meter</p>
-                  </Col>
-                  <Col span={3}>
+
+                  <Col span={12}>
                     <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/sensor.png?v=1639385937" alt="" />
-                  </Col>
-                  <Col span={9}>
-                    <h3>300 Meter</h3>
-                    <p>Sensor range</p>
+                    <div>
+                      <h3>300 Meter</h3>
+                      <p>Sensor range</p>
+                    </div>
                   </Col>
                 </Row>
               </div>
               <div className="feature__item">
                 <Row>
-                  <Col span={3}>
+                  <Col span={12} style={{ display: 'flex', alignItems: 'center' }}>
                     <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/push.png?v=1639386021" alt="" />
+                    <div>
+                      <h3>10 KM</h3>
+                      <p>Control Range</p>
+                    </div>
                   </Col>
-                  <Col span={9}>
-                    <h3>10 KM</h3>
-                    <p>Control Range</p>
-                  </Col>
-                  <Col span={3}>
+                  <Col span={12}>
                     <img src="https://cdn.shopify.com/s/files/1/1280/1207/files/visibility2.png?v=1639386236" alt="" />
-                  </Col>
-                  <Col span={9}>
-                    <h3>5 Direction</h3>
-                    <p>Obstacle sensing</p>
+                    <div>
+                      <h3>5 Direction</h3>
+                      <p>Obstacle sensing</p>
+                    </div>
                   </Col>
                 </Row>
               </div>
@@ -484,12 +304,12 @@ const Home = () => {
           </div>
         </div>
         {/* Map */}
+        <HomeMap />
 
         {/* Blog */}
         <HomeBlog />
         {/* Gallery */}
         <HomeGallery />
-        <FloatButton.BackTop />
       </div>
     </>
   )

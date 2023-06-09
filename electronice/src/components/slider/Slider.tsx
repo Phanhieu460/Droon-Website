@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navigation, Pagination } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper } from 'swiper/react'
 import { SwiperModule } from 'swiper/types'
 
@@ -30,7 +30,7 @@ const Slider = (props: ISlider) => {
       keyboard={{
         enabled: keyboardEnable
       }}
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       className="mySwiper"
     >
       {children}

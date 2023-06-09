@@ -134,14 +134,14 @@
     border: 1px solid #f1f1f1;
   }
 
-  @media #{$sm-layout} {
+  @media #{$lg-layout} {
     //tablet
     .product-modal {
       display: none;
     }
   }
 
-  @media #{$xs-layout} {
+  @media #{$md-layout} {
     .product-modal {
       flex-basis: 100%;
     }

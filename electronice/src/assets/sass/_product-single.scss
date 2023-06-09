@@ -104,6 +104,9 @@
       }
     }
   }
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .product-single-list {
@@ -215,14 +218,14 @@
     }
   }
 }
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   .product-single-list {
     flex-basis: 45%;
     margin: 10px;
   }
 }
 
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .product-single-list {
     flex-basis: 100%;
     flex-direction: column;

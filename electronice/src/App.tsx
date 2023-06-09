@@ -19,6 +19,7 @@ import ProductList from './pages/Product/ProductList'
 import Shipping from 'pages/other/Shipping'
 import Payment from 'pages/other/Payment'
 import { Helmet } from 'react-helmet'
+import { FloatButton } from 'antd'
 
 function App() {
   const location = useLocation()
@@ -50,6 +51,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <FloatButton.BackTop />
     </>
   )
 }

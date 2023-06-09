@@ -18,13 +18,13 @@
   flex-wrap: wrap;
 }
 
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   //tablet
   .product-item {
   }
 }
 
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .product {
     display: flex;
     flex-direction: column-reverse;

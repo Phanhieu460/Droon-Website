@@ -49,89 +49,85 @@ const Header = (props: Props) => {
     setOpen(false)
   }
   return (
-    <div className="header">
-      <Link to="/">
-        <img className="header__logo" src={logo} alt="logo" />
-      </Link>
-      <div className="header__menu">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/product">Product</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </div>
-      <div className="header__cart">
-        <div className="header__cart--drawer">
-          <Space>
+    <>
+      <div className="header">
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="logo" />
+        </Link>
+        <div className="header__menu">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/product">Product</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </div>
+        <div className="header__cart">
+          <div className="header__cart--drawer">
             <span className="header__cart__icon">
-              <FontAwesomeIcon className="header__cart--icon" icon={faCartPlus} onClick={showDrawer} />
+              <FontAwesomeIcon className="header__cart__icon--icon" icon={faCartPlus} onClick={showDrawer} />
               <span className="header__cart__icon--quantity">{cartData && cartData.length ? cartData.length : 0}</span>
             </span>
-          </Space>
-
-          <Drawer
-            rootClassName="drewa"
-            title="Shopping cart"
-            placement={placement}
-            width={400}
-            onClose={onClose}
-            open={open}
-          >
-            {/* {cartData && cartData.length ? (
-              <>
-                
-                
-              </>
-            ) : (
-              <p>Your cart is empty now.</p>
-            )} */}
-            <MenuCart cartData={cartData} setOpen={setOpen} />
-          </Drawer>
-        </div>
-        <Dropdown
-          dropdownRender={menu => {
-            return (
-              <>
-                {token ? (
-                  <Menu>
-                    <Menu.Item key="profile">
-                      <Link to="/profile">My Profile</Link>
-                    </Menu.Item>
-                    <Menu.Item key="logout" onClick={handleLogout}>
-                      Logout
-                    </Menu.Item>
-                  </Menu>
-                ) : (
-                  <Menu>
-                    <Menu.Item key="signIn">
-                      <Link to="/login">Sign In</Link>
-                    </Menu.Item>
-                    <Menu.Item key="signUp">
-                      <Link to="/register">Sign Up</Link>
-                    </Menu.Item>
-                  </Menu>
-                )}
-              </>
-            )
-          }}
-          placement="bottomRight"
-          arrow
-        >
-          {profile ? <img className="avatar" src={profile?.image} /> : <FontAwesomeIcon icon={faCircleUser} />}
-        </Dropdown>
-      </div>
-      <FontAwesomeIcon icon={faBars} className="header__menubar" onClick={handleClickMenuBar} />
-      {showMenuMobile && (
-        <div className="header__mobile">
-          <FontAwesomeIcon icon={faXmark} className="header__mobile--close" onClick={() => setShowMenuMobile(false)} />
-          <div className="header__mobile--menu">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/product">Product</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
           </div>
+          <Dropdown
+            className="header__cart--user"
+            dropdownRender={menu => {
+              return (
+                <>
+                  {token ? (
+                    <Menu>
+                      <Menu.Item key="profile">
+                        <Link to="/profile">My Profile</Link>
+                      </Menu.Item>
+                      <Menu.Item key="logout" onClick={handleLogout}>
+                        Logout
+                      </Menu.Item>
+                    </Menu>
+                  ) : (
+                    <Menu>
+                      <Menu.Item key="signIn">
+                        <Link to="/login">Sign In</Link>
+                      </Menu.Item>
+                      <Menu.Item key="signUp">
+                        <Link to="/register">Sign Up</Link>
+                      </Menu.Item>
+                    </Menu>
+                  )}
+                </>
+              )
+            }}
+            placement="bottomRight"
+            arrow
+          >
+            {profile ? <img className="avatar" src={profile?.image} /> : <FontAwesomeIcon icon={faCircleUser} />}
+          </Dropdown>
         </div>
-      )}
-    </div>
+        <FontAwesomeIcon icon={faBars} className="header__menubar" onClick={handleClickMenuBar} />
+        {showMenuMobile && (
+          <div className="header__mobile">
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="header__mobile--close"
+              onClick={() => setShowMenuMobile(false)}
+            />
+            <div className="header__mobile--menu">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/product">Product</NavLink>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
+            </div>
+          </div>
+        )}
+      </div>
+      <Drawer
+        rootClassName="drawer"
+        title="Shopping cart"
+        placement={placement}
+        width={400}
+        onClose={onClose}
+        open={open}
+      >
+        <MenuCart cartData={cartData} setOpen={setOpen} />
+      </Drawer>
+    </>
   )
 }
 

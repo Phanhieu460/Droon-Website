@@ -1,4 +1,4 @@
 //responsive website
-$md-layout: 'screen and (max-width: 1200px)';
-$sm-layout: 'screen and (max-width: 992px)';
-$xs-layout: 'screen and (max-width: 768px)';
+$xl-layout: 'screen and (min-width: 1023px)';
+$lg-layout: 'screen and (min-width: 767px) and (max-width: 1024px)';
+$md-layout: 'screen and (max-width: 768px)';

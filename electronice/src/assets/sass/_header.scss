@@ -7,7 +7,7 @@
   left: 0;
   top: 0;
   z-index: 100;
-  padding: 15px;
+  padding: 15px 30px;
   cursor: pointer;
   color: #1f2226;
   background: #fff;
@@ -45,10 +45,11 @@
     }
 
     &__icon {
+      position: relative;
       &--quantity {
         position: absolute;
-        right: 52px;
-        top: 41px;
+        right: -10px;
+        top: -12px;
         transform: translate(-50%, -100%);
         font-size: 13px;
         width: 22px;
@@ -158,28 +159,15 @@
   border-bottom: 1px solid #ccc;
 }
 
-// @media #{$md-layout} {
-//   .header {
-//     max-width: 960px;
-//   }
-// }
-
-@media #{$sm-layout} {
+@media #{$lg-layout} {
   //tablet
   .header {
-    &__menu {
-      display: none;
-    }
-    &__cart {
-      position: absolute;
-      right: 5%;
-    }
     &__account {
       position: absolute;
       right: 5%;
     }
     &__menubar {
-      display: block;
+      display: none;
     }
     &__mobile {
       width: 330px;
@@ -187,7 +175,7 @@
   }
 }
 
-@media #{$xs-layout} {
+@media #{$md-layout} {
   .header {
     &__menu {
       display: none;
@@ -195,6 +183,14 @@
 
     &__cart {
       margin-right: 14px;
+      position: absolute;
+      right: 5%;
+      &--drawer {
+        margin-right: 15px;
+      }
+      &--user {
+        display: none;
+      }
     }
     &__account {
       position: absolute;
