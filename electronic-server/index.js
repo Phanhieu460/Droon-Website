@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
-const swaggerUI = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
+// const swaggerUI = require('swagger-ui-express');
+// const swaggerJsDoc = require('swagger-jsdoc');
 
 const cors = require('cors');
 
@@ -21,9 +21,9 @@ const app = express();
 
 connectDB();
 
-const specs = require('./swagger.json');
+// const specs = require('./swagger.json');
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 app.use(express.json()); // doc bat cu du lieu trong body
 app.use(cors());
