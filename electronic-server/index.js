@@ -15,7 +15,7 @@ const saleInvoiceRouter = require('./routes/saleInvoice');
 const purchaseInvoiceRouter = require('./routes/purchaseInvoice');
 
 const Products = require('./models/Product');
-const Apzon = require('./models/saleInvoice');
+const Apzon = require('./models/PurchaseInvoice');
 const Users = require('./models/User');
 
 const app = express();
