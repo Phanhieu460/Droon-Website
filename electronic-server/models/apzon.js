@@ -5,6 +5,9 @@ const ApzonSchema = new Schema({
   nameCustomer: {
     type: String,
   },
+  orderName: {
+    type: String,
+  },
   orderDate: {
     type: String,
   },

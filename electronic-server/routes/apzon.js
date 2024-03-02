@@ -53,7 +53,7 @@ router.delete('/:id', async (req, res) => {
 
 // CREATE PRODUCT
 router.post('/', async (req, res) => {
-  const { nameCustomer, orderDate, totalPrice, products } = req.body;
+  const { nameCustomer, orderDate, orderName, totalPrice, products } = req.body;
   const productExist = await Product.findOne({ name });
   if (productExist) {
     res.status(400);
@@ -62,6 +62,7 @@ router.post('/', async (req, res) => {
     const product = new Product({
       nameCustomer,
       orderDate,
+      orderName,
       totalPrice,
       products,
     });
@@ -115,11 +116,13 @@ router.post('/', async (req, res) => {
 // UPDATE PRODUCT
 router.put('/:id', async (req, res) => {
   try {
-    const { nameCustomer, orderDate, totalPrice, products } = req.body;
+    const { nameCustomer, orderDate, orderName, totalPrice, products } =
+      req.body;
     const product = await Product.findById(req.params.id);
     if (product) {
       product.nameCustomer = nameCustomer || product.nameCustomer;
       product.orderDate = orderDate || product.orderDate;
+      product.orderName = orderName || product.orderName;
       product.totalPrice = totalPrice || product.totalPrice;
       product.products = products || product.products;
 
