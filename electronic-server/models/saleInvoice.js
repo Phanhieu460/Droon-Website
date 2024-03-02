@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ApzonSchema = new Schema({
+const SaleInvoiceSchema = new Schema({
   nameCustomer: {
     type: String,
   },
@@ -35,6 +35,6 @@ const ApzonSchema = new Schema({
   ],
 });
 
-ApzonSchema.set('timestamps', true);
+SaleInvoiceSchema.set('timestamps', true);
 
-module.exports = mongoose.model('apzons', ApzonSchema);
+module.exports = mongoose.model('saleInvoice', SaleInvoiceSchema);

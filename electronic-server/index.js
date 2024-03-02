@@ -11,10 +11,11 @@ const authRouter = require('./routes/user');
 const productRouter = require('./routes/product');
 const blogRouter = require('./routes/blog');
 const orderRouter = require('./routes/order');
-const apzonRouter = require('./routes/apzon');
+const saleInvoiceRouter = require('./routes/saleInvoice');
+const purchaseInvoiceRouter = require('./routes/purchaseInvoice');
 
 const Products = require('./models/Product');
-const Apzon = require('./models/apzon');
+const Apzon = require('./models/PurchaseInvoice');
 const Users = require('./models/User');
 
 const app = express();
@@ -30,7 +31,8 @@ app.use(cors());
 
 app.use('/api/users', authRouter);
 app.use('/api/products', productRouter);
-app.use('/api/apzon', apzonRouter);
+app.use('/api/saleInvoice', saleInvoiceRouter);
+app.use('/api/purchaseInvoice', purchaseInvoiceRouter);
 app.use('/api/blogs', blogRouter);
 app.use('/api/orders', orderRouter);
 app.get('/api/config/paypal', (req, res) => {

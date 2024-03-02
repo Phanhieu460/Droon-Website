@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const { admin, protect } = require('../middleware/auth');
-const Product = require('../models/apzon');
+const Product = require('../models/PurchaseInvoice');
 
 //GET ALL Produc
 router.get('/', async (req, res) => {
@@ -44,7 +44,7 @@ router.delete('/:id', async (req, res) => {
     const product = await Product.findById(req.params.id);
     if (product) {
       await product.remove();
-      res.json({ message: 'Sản phẩm đã được xóa' });
+      res.json({ message: 'Đơn mua hàng đã được xóa' });
     }
   } catch {
     res.status(err.statusCode || 500).send(err.message);
@@ -53,16 +53,17 @@ router.delete('/:id', async (req, res) => {
 
 // CREATE PRODUCT
 router.post('/', async (req, res) => {
-  const { nameCustomer, orderDate, orderName, totalPrice, products } = req.body;
+  const { nameSupperlier, purchaseDate, purchaseName, totalPrice, products } =
+    req.body;
   const productExist = await Product.findOne({ name });
   if (productExist) {
     res.status(400);
     throw new Error('Product name already exist');
   } else {
     const product = new Product({
-      nameCustomer,
-      orderDate,
-      orderName,
+      nameSupperlier,
+      purchaseDate,
+      purchaseName,
       totalPrice,
       products,
     });
@@ -116,7 +117,7 @@ router.post('/', async (req, res) => {
 // UPDATE PRODUCT
 router.put('/:id', async (req, res) => {
   try {
-    const { nameCustomer, orderDate, orderName, totalPrice, products } =
+    const { nameSupperlier, purchaseDate, purchaseName, totalPrice, products } =
       req.body;
     const product = await Product.findById(req.params.id);
     if (product) {
