@@ -120,9 +120,6 @@ router.put('/:id', async (req, res) => {
       req.body;
     const product = await Product.findById(req.params.id);
     if (product) {
-      product.nameCustomer = nameCustomer || product.nameCustomer;
-      product.orderDate = orderDate || product.orderDate;
-      product.orderName = orderName || product.orderName;
       product.totalPrice = totalPrice || product.totalPrice;
       product.products = products || product.products;
 
