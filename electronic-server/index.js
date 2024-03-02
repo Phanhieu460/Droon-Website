@@ -15,7 +15,7 @@ const saleInvoiceRouter = require('./routes/saleInvoice');
 const purchaseInvoiceRouter = require('./routes/purchaseInvoice');
 
 const Products = require('./models/Product');
-const Apzon = require('./models/PurchaseInvoice');
+const Apzon = require('./models/saleInvoice');
 const Users = require('./models/User');
 
 const app = express();
@@ -39,7 +39,7 @@ app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
 
-const data = JSON.parse(fs.readFileSync('./data/apzon.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('./data/purchase.json', 'utf-8'));
 // const dataProducts = JSON.parse(
 //   fs.readFileSync('./data/product2.json', 'utf-8')
 // );
@@ -56,7 +56,7 @@ const importData = async () => {
   }
 };
 
-// importData();
+importData();
 
 const PORT = process.env.PORT || 5000;
 

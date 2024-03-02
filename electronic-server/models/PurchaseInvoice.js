@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PurchaseInvoiceSchema = new Schema({
-  nameSupperlier: {
+  nameSupplier: {
     type: String,
   },
   purchaseName: {

@@ -53,7 +53,7 @@ router.delete('/:id', async (req, res) => {
 
 // CREATE PRODUCT
 router.post('/', async (req, res) => {
-  const { nameSupperlier, purchaseDate, purchaseName, totalPrice, products } =
+  const { nameSupplier, purchaseDate, purchaseName, totalPrice, products } =
     req.body;
   const productExist = await Product.findOne({ name });
   if (productExist) {
@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
     throw new Error('Product name already exist');
   } else {
     const product = new Product({
-      nameSupperlier,
+      nameSupplier,
       purchaseDate,
       purchaseName,
       totalPrice,
@@ -117,7 +117,7 @@ router.post('/', async (req, res) => {
 // UPDATE PRODUCT
 router.put('/:id', async (req, res) => {
   try {
-    const { nameSupperlier, purchaseDate, purchaseName, totalPrice, products } =
+    const { nameSupplier, purchaseDate, purchaseName, totalPrice, products } =
       req.body;
     const product = await Product.findById(req.params.id);
     if (product) {

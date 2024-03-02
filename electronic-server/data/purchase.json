@@ -1,8 +1,8 @@
 [
   {
-    "orderName": "Order 1",
-    "nameCustomer": "John Doe",
-    "orderDate": "2024-02-27",
+    "nameSupplier": "Supplier 1",
+    "purchaseName": "Purchase 1",
+    "purchaseDate": "2024-02-27",
     "totalPrice": 150,
     "products": [
       {
@@ -22,9 +22,9 @@
     ]
   },
   {
-    "orderName": "Order 2",
-    "nameCustomer": "Jane Smith",
-    "orderDate": "2024-02-26",
+    "nameSupplier": "Supplier 2",
+    "purchaseName": "Purchase 2",
+    "purchaseDate": "2024-02-26",
     "totalPrice": 200,
     "products": [
       {
@@ -44,9 +44,9 @@
     ]
   },
   {
-    "orderName": "Order 3",
-    "nameCustomer": "Alice Johnson",
-    "orderDate": "2024-02-25",
+    "nameSupplier": "Supplier 3",
+    "purchaseName": "Purchase 3",
+    "purchaseDate": "2024-02-25",
     "totalPrice": 120,
     "products": [
       {
@@ -66,9 +66,9 @@
     ]
   },
   {
-    "orderName": "Order 4",
-    "nameCustomer": "Bob Brown",
-    "orderDate": "2024-02-24",
+    "nameSupplier": "Supplier 4",
+    "purchaseName": "Purchase 4",
+    "purchaseDate": "2024-02-24",
     "totalPrice": 80,
     "products": [
       {
@@ -88,9 +88,9 @@
     ]
   },
   {
-    "orderName": "Order 5",
-    "nameCustomer": "Emily Davis",
-    "orderDate": "2024-02-23",
+    "nameSupplier": "Supplier 5",
+    "purchaseName": "Purchase 5",
+    "purchaseDate": "2024-02-23",
     "totalPrice": 90,
     "products": [
       {
@@ -110,9 +110,9 @@
     ]
   },
   {
-    "orderName": "Order 6",
-    "nameCustomer": "Michael Wilson",
-    "orderDate": "2024-02-22",
+    "nameSupplier": "Supplier 6",
+    "purchaseName": "Purchase 6",
+    "purchaseDate": "2024-02-22",
     "totalPrice": 180,
     "products": [
       {
@@ -132,9 +132,9 @@
     ]
   },
   {
-    "orderName": "Order 7",
-    "nameCustomer": "Sophia Martinez",
-    "orderDate": "2024-02-21",
+    "nameSupplier": "Supplier 7",
+    "purchaseName": "Purchase 7",
+    "purchaseDate": "2024-02-21",
     "totalPrice": 250,
     "products": [
       {
@@ -154,9 +154,9 @@
     ]
   },
   {
-    "orderName": "Order 8",
-    "nameCustomer": "William Anderson",
-    "orderDate": "2024-02-20",
+    "nameSupplier": "Supplier 8",
+    "purchaseName": "Purchase 8",
+    "purchaseDate": "2024-02-20",
     "totalPrice": 160,
     "products": [
       {
@@ -165,50 +165,6 @@
         "quantity": 2,
         "productPrice": 80,
         "total": 160
-      }
-    ]
-  },
-  {
-    "orderName": "Order 9",
-    "nameCustomer": "Olivia Taylor",
-    "orderDate": "2024-02-19",
-    "totalPrice": 140,
-    "products": [
-      {
-        "productId": "16",
-        "productName": "Product P",
-        "quantity": 1,
-        "productPrice": 90,
-        "total": 90
-      },
-      {
-        "productId": "17",
-        "productName": "Product Q",
-        "quantity": 1,
-        "productPrice": 50,
-        "total": 50
-      }
-    ]
-  },
-  {
-    "orderName": "Order 10",
-    "nameCustomer": "Daniel Thomas",
-    "orderDate": "2024-02-18",
-    "totalPrice": 300,
-    "products": [
-      {
-        "productId": "18",
-        "productName": "Product R",
-        "quantity": 2,
-        "productPrice": 120,
-        "total": 240
-      },
-      {
-        "productId": "19",
-        "productName": "Product S",
-        "quantity": 1,
-        "productPrice": 60,
-        "total": 60
       }
     ]
   }
